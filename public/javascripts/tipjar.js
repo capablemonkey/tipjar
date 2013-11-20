@@ -1,5 +1,5 @@
 CloudFlare.define("tipjar",
-    [       "tipjar/config", "cloudflare/jquery1.7"],
+    ["tipjar/config", "cloudflare/jquery1.7"],
     function(config,$)
     {		
     	function initialize() {
@@ -47,8 +47,7 @@ CloudFlare.define("tipjar",
 
 		function startTimer(time) {
 			// waits time seconds before displaying tipjar
-			sleep(time);
-			displayTipjar();
+			setTimeout(displayTipjar, 1000 * time);
 		}
 		
     }
