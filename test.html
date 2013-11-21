@@ -41,15 +41,12 @@
     		return previous_visits + 1;
     	}
 		function startOAuth() {
-			var redirect_uri = "path to an html file on backend that calls a function defined here to finish the oauth process and pass a session id to parent frame"
-			var url = "https://www.dwolla.com/oauth/v2/authenticate?client_id=" + config.app_key + "&response_type=code&redirect_uri=" + redirect_uri + "&scope=send"
-
 			// store tip amount for later
 			window.tip = $("#amount")[0].value;
 
 			$.magnificPopup.open({
 			    items: {
-			      src: url,
+			      src: "http://cloudflare-tipjar.herokuapp.com/start_oauth",
 			    },
 			    type: 'iframe'
 			});
