@@ -8,10 +8,10 @@
 
 	<script>
 	config = {
-		"display_mode": "always",
+		"display_mode": "visits",
 		"app_key": "12345",
 		"time_threshold": "2",
-		"visit_threshold": "2"
+		"visit_threshold": "10"
 	}
 		window.SESSION_ID = null;
 		window.tip = null;
@@ -33,9 +33,12 @@
     		else if (config.display_mode == "always") displayTipjar();
     	}
     	function logVisit() {
-    		// make GET request to log_visit endpoint
-    		// returns integer
-    		return;
+    		// store # of visits in cookie
+    		// return number of total visits
+    		previous_visits = parseInt(getCookie("tj_visits"));
+    		if (isNaN(previous_visits)) previous_visits = 0;
+    		document.cookie = "tj_visits=" + (previous_visits + 1);
+    		return previous_visits + 1;
     	}
 		function startOAuth() {
 			var redirect_uri = "path to an html file on backend that calls a function defined here to finish the oauth process and pass a session id to parent frame"
@@ -106,6 +109,17 @@
 
 		function hideTipjar() {
 			$('#tipjar')[0].style.display = 'none';
+		}
+
+		function getCookie(name) {
+		    var nameEQ = name + "=";
+		    var ca = document.cookie.split(';');
+		    for(var i=0;i < ca.length;i++) {
+		        var c = ca[i];
+		        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		    }
+		    return null;
 		}
 
 	</script>
