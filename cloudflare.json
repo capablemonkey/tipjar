@@ -10,16 +10,10 @@
             "Language": "English",
             "Price": "Free",
             "Restrictions": "None",
-            // TODO: fill in custom TOS URL
             "TOS":"http://www.cloudflare.com/terms",
-            "has_js": true
         }, 
         "assets":{
-            // TODO: fill in assets
-            "logos" : {
-                "200px": "./public/images/logo-200.png",
-                "132px": "./public/images/logo-132.png"
-            },
+           
         },
         "interface": [
             {
@@ -27,9 +21,8 @@
                 "id": "app_key",
                 "name": "Dwolla App Key",
                 "description": "Your Dwolla Application Key.",
-                // TODO: what do domain request and private mean?
-                "domain_request": true,
-                "private": true
+                "domain_request": false,
+                "private": false
             },
             {
                 "type": "select",
@@ -56,16 +49,16 @@
                 "id": "visit_threshold",
                 "name": "Visit Threshold",
                 "description": "How many times should a user visit your site before Tipjar appears?",
-                "domain_request": true,
-                "private": true
+                "domain_request": false,
+                "private": false
             },
             {
                 "type": "integer",
                 "id": "time_threshold",
                 "name": "Time Threshold",
                 "description": "How long should a user remain on a page before the tipjar appears? (seconds)",
-                "domain_request": true,
-                "private": true
+                "domain_request": false,
+                "private": false
             }
             
         ]
