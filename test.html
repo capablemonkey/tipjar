@@ -9,7 +9,6 @@
 	<script>
 	config = {
 		"display_mode": "visits",
-		"app_key": "12345",
 		"time_threshold": "2",
 		"visit_threshold": "10"
 	}
@@ -46,7 +45,7 @@
 
 			$.magnificPopup.open({
 			    items: {
-			      src: "http://cloudflare-tipjar.herokuapp.com/start_oauth",
+			      src: "http://cloudflare-tipjar.herokuapp.com/start_oauth?site=" + window.location.host,
 			    },
 			    type: 'iframe'
 			});
@@ -79,13 +78,14 @@
 		}
 
 		function sendPayment() {
-			// send payment amount, PIN, and session id to server
+			// send payment amount, PIN, and session id, and domain to server
 			// display response to user
 			pin = $("#pin")[0].value;
 			$.post("sendpayment", { 
 				session_id: window.session_id, 
 				amount: window.tip, 
-				pin: pin 
+				pin: pin,
+				domain: window.location.host
 			}).done( 
 				function(data) {
 					if (data.success) congratulations();
