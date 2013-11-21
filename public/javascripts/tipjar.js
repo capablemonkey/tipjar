@@ -49,6 +49,10 @@ CloudFlare.define("tipjar",
 			// waits time seconds before displaying tipjar
 			setTimeout(displayTipjar, 1000 * time);
 		}
+
+		function hideTipjar() {
+			$('#tipjar')[0].style.display = 'none';
+		}
 		
     }
 )
