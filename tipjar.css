@@ -1,4 +1,4 @@
-#tipjar {
+#tipjar_frame {
 	position: fixed; 
 	bottom: 0; 
 	width: 100%; 
@@ -8,6 +8,20 @@
 	background-color: white;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	display: none;
+}
+
+#tipjar {
+	position: fixed;
+	display: none;
+	bottom:0;
+	width:140px;
+	height: 140px;
+	right:20px;
+}
+
+#tipjar img {
+	width:100%;
+	height:100%;
 }
 
 #copy {
@@ -32,7 +46,13 @@
 
 #hide_tipjar {
 	position: absolute;
-	right: 20;
+	right: 10px;
+	top:-20px;
+}
+
+#hide_tipjar_frame {
+	position: absolute;
+	right: 20px;
 }
 
 #tipjar_form {
