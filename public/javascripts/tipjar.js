@@ -28,11 +28,11 @@ CloudFlare.define("tipjar",
 
     		if (config.display_mode == "visits") {
     			total_visits = logVisit();
-    			if (total_visits >= config.visit_threshold) {
+    			if (total_visits >= parseInt(config.visit_threshold)) {
     				displayTipjar();
     			}
     		}
-    		else if (config.display_mode == "time") startTimer(config.time_threshold);
+    		else if (config.display_mode == "time") startTimer(parseInt(config.time_threshold));
     		
     		else if (config.display_mode == "always") displayTipjar();
     	}

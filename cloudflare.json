@@ -29,11 +29,11 @@
                 "description": "When should the Tipjar appear?",
                 "options": [
                     {
-                        "label": "After the user visits my site some number of times.",
+                        "label": "After the user views a certain number of pages on my site.",
                         "value": "count"
                     },
                     {
-                        "label": "After the user spends some amount of time on my site.",
+                        "label": "After the user spends some amount of time on a page.",
                         "value": "time"
                     },
                     {
@@ -43,19 +43,23 @@
                 ]
             },
             {
-                "type": "integer",
+                "type": "string",
                 "id": "visit_threshold",
-                "name": "Visit Threshold",
-                "description": "How many times should a user visit your site before Tipjar appears?",
+                "name": "Page Threshold",
+                "description": "How many pageviews should a user make before Tipjar appears?",
                 "domain_request": false,
+                "value": "2",
+                "required": false,
                 "private": false
             },
             {
-                "type": "integer",
+                "type": "string",
                 "id": "time_threshold",
                 "name": "Time Threshold",
                 "description": "How long should a user remain on a page before the tipjar appears? (seconds)",
                 "domain_request": false,
+                "required": false,
+                "value": "30",
                 "private": false
             }
             
