@@ -65,6 +65,7 @@ CloudFlare.define("tipjar",
 			// event listener, listens for message from oauth iframe.
 			// When triggered, stores session id and closes iframe
 			// then updates tipjar frame with PIN form
+			if (event.data.session_id === undefined) return;
 			$.magnificPopup.close();
 			session_id = event.data.session_id;
 			console.log(event.data)
