@@ -26,6 +26,11 @@ CloudFlare.define("tipjar",
 			$.getScript( "http://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.8.9/jquery.magnific-popup.min.js", function() {});
 			loadHTML();
 
+			$("#hide_tipjar_frame").click(hideTipjar);
+			$("#start").click(startOAuth);
+			$("#tipjar_button").click(displayTipjarFrame);
+			$("#hide_tipjar").click(hideTipjar);
+
     		if (config.display_mode == "visits") {
     			total_visits = logVisit();
     			if (total_visits >= parseInt(config.visit_threshold)) {
@@ -148,7 +153,7 @@ CloudFlare.define("tipjar",
 		}
 
 		function loadHTML() {
-			$('<div id="tipjar_frame"><a id="hide_tipjar_frame" onclick="hideTipjar();">X</a><div id="copy"><p id="copy_heading">Did you enjoy this content?</p><p id="copy_body">This is free content, and the author lives on tips, so don&#39;t be afraid to tip!</p></div><div id="midsection"><form id="tipjar_form"><a id="dollarsign">$</a><input id="amount" name="amount" value="1.00" type="number" min="0.01" step="0.01"><a class="button" onclick="startOAuth()">Give!</a></form></div><div id="endsection">No thanks, I don&#39;t want to donate to the author.</div></div><div id="tipjar"><img src="./public/images/tipjar.png" onclick="displayTipjarFrame();"/><a id="hide_tipjar" onclick="hideTipjar();">X</a></div>').appendTo('body');
+			$('<div id="tipjar_frame"><a id="hide_tipjar_frame">X</a><div id="copy"><p id="copy_heading">Did you enjoy this content?</p><p id="copy_body">This is free content, and the author lives on tips, so don&#39;t be afraid to tip!</p></div><div id="midsection"><form id="tipjar_form"><a id="dollarsign">$</a><input id="amount" name="amount" value="1.00" type="number" min="0.01" step="0.01"><a id="start" class="button">Give!</a></form></div><div id="endsection">No thanks, I don&#39;t want to donate to the author.</div></div><div id="tipjar"><img id="tipjar_button" src="http://ajax.cloudflare.com/cdn-cgi/nexp/apps/tipjar/images/tipjar.png"/><a id="hide_tipjar">X</a></div>').appendTo('body');
 		}
 		
 		$(document).ready(initialize);

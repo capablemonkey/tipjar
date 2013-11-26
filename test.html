@@ -35,6 +35,11 @@
 			$.getScript( "http://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.8.9/jquery.magnific-popup.min.js", function() {});
 			loadHTML();
 
+			$("#hide_tipjar_frame").click(hideTipjar);
+			$("#start").click(startOAuth);
+			$("#tipjar_button").click(displayTipjarFrame);
+			$("#hide_tipjar").click(hideTipjar);
+
     		if (config.display_mode == "visits") {
     			total_visits = logVisit();
     			if (total_visits >= config.visit_threshold) {
@@ -167,7 +172,7 @@
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo odio ac magna suscipit vehicula et sodales urna. Vivamus eu ultrices tellus. Integer eget pulvinar nibh. Ut aliquam est ut nisl facilisis, in vestibulum velit varius. Mauris volutpat, orci at eleifend ornare, augue lacus vestibulum tellus, sed elementum lectus ligula et orci. Donec viverra pulvinar felis, et imperdiet est ornare et. Aenean nec feugiat felis. Vestibulum scelerisque quam non dui dignissim ullamcorper. Integer vitae nulla malesuada nibh fringilla viverra. Etiam ultricies augue libero, at luctus mi hendrerit a. Donec aliquet, tortor in ullamcorper tempus, purus odio placerat leo, nec porta arcu ipsum et diam.
 
 <div id="tipjar_frame">
-	<a id="hide_tipjar_frame" onclick="hideTipjar();">X</a>
+	<a id="hide_tipjar_frame">X</a>
 	<div id="copy">
 		<p id="copy_heading">Did you enjoy this content?</p>
 		<p id="copy_body">This is free content, and the author lives on tips, so don&#39;t be afraid to tip!</p>
@@ -176,7 +181,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo odio ac m
 		<form id="tipjar_form">
 			<a id="dollarsign">$</a>
 			<input id="amount" name="amount" value="1.00" type="number" min="0.01" step="0.01">
-			<a class="button" onclick="startOAuth()">Give!</a>
+			<a id="start" class="button">Give!</a>
 		</form>
 	</div>
 	<div id="endsection">
@@ -185,8 +190,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo odio ac m
 </div>
 
 <div id="tipjar">
-	<img src="./public/images/tipjar.png" onclick="displayTipjarFrame();" />
-	<a id="hide_tipjar" onclick="hideTipjar();">X</a>
+	<img id="tipjar_button" src="http://ajax.cloudflare.com/cdn-cgi/nexp/apps/tipjar/images/tipjar.png" />
+	<a id="hide_tipjar">X</a>
 </div>
 
 Pellentesque hendrerit accumsan rutrum. Pellentesque in fermentum sapien, et feugiat diam. Curabitur elementum sed diam eget tempus. Vestibulum fringilla egestas nulla, at bibendum odio ornare et. Donec a sem quis magna interdum eleifend sit amet ac est. Aenean fringilla augue sit amet luctus commodo. Aliquam iaculis scelerisque lorem non facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Aenean dolor nisi, porttitor ut faucibus aliquam, volutpat at arcu.
