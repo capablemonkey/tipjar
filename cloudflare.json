@@ -61,12 +61,17 @@
                 "required": false,
                 "value": "30",
                 "private": false
+            },
+            {
+                "type": "string",
+                "id": "destination",
+                "name": "Email",
+                "description": "Your email address, where you'd like to receive your contributions.",
+                "domain_request": false,
+                "required": true,
+                "private": false
             }
             
         ]
-    },
-    "account": {
-        "callback_url": "http://cloudflare-tipjar.herokuapp.com/",
-        "user_fields": ["email"]
     }
 }

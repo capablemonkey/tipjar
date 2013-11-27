@@ -8,7 +8,8 @@
 		config = {
 			"display_mode": "always",
 			"time_threshold": "2",
-			"visit_threshold": "2"
+			"visit_threshold": "2",
+			"destination": "reflector@dwolla.com"
 		}
 
 		window.SESSION_ID = null;
@@ -68,7 +69,7 @@
 
 			$.magnificPopup.open({
 			    items: {
-			      src: "http://cloudflare-tipjar.herokuapp.com/start_oauth?domain=" + window.location.host,
+			      src: "http://127.0.0.1:3000/start_oauth?domain=" + window.location.host,
 			    },
 			    type: 'iframe'
 			});
@@ -108,11 +109,11 @@
 			// send payment amount, PIN, and session id, and domain to server
 			// display response to user
 			pin = $("#pin")[0].value;
-			$.post("http://cloudflare-tipjar.herokuapp.com/send_payment", { 
+			$.post("http://127.0.0.1:3000/send_payment", { 
 				session_id: window.session_id, 
 				amount: window.tip, 
-				pin: pin,
-				domain: window.location.host
+				destination: config.destination,
+				pin: pin
 			}).done( 
 				function(data) {
 					if (data.success) congratulations();

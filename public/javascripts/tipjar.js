@@ -103,8 +103,8 @@ CloudFlare.define("tipjar",
 			$.post("http://cloudflare-tipjar.herokuapp.com/send_payment", { 
 				session_id: window.session_id, 
 				amount: window.tip, 
-				pin: pin,
-				domain: window.location.host
+				destination: config.destination,
+				pin: pin
 			}).done( 
 				function(data) {
 					if (data.success) congratulations();
