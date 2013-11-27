@@ -64,5 +64,9 @@
             }
             
         ]
+    },
+    "account": {
+        "callback_url": "http://cloudflare-tipjar.herokuapp.com/",
+        "user_fields": ["email"]
     }
 }
