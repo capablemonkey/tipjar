@@ -157,6 +157,5 @@ CloudFlare.define("tipjar",
 		}
 		
 		$(document).ready(initialize);
-		
     }
 )
